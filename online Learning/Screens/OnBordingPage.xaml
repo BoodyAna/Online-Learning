@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="online_Learning.Screens.OnBordingPage"
+             Title="OnBordingPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="White">
+    <StackLayout Orientation="Vertical" Spacing="15">
+        <Border StrokeShape="RoundRectangle 0,0,30,30">
+            <Image Source='onbord.png' Aspect="Fill"></Image>
+        </Border>
+        <Label Text="The Best Platform For Online Learning" FontSize="28" TextColor="#343674" HorizontalTextAlignment="Center" 
+               VerticalTextAlignment="Center" FontAttributes="Bold" Margin="10,0"></Label>
+        <Label Text="Amet minim mollit non deserunt ullamco est sit aliqua amet sint. Velit officia consequat duis enim velit mollit."
+               FontSize="15" TextColor="#343674CC" HorizontalTextAlignment="Center" 
+               VerticalTextAlignment="Center"  Margin="30,0,30,20"></Label>
+        <Button Text="Start Learning" BackgroundColor="#343674" TextColor="White" FontSize="18" WidthRequest="228"
+                HeightRequest="60" CornerRadius="15" BorderWidth="0"></Button>
+        
+    </StackLayout>
+
+</ContentPage>

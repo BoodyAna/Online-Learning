@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="online_Learning.Screens.HomePage"
+             Title="HomePage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="White">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="Tempplet1">
+                <Border StrokeShape="RoundRectangle 15" BackgroundColor="{Binding BackGround}">
+                    <StackLayout Orientation="Horizontal" Padding="10">
+                        <Border StrokeShape="RoundRectangle 15" StrokeThickness="0" WidthRequest="80" HeightRequest="80">
+                            <Image Source="{Binding Image}" ></Image>
+                        </Border>
+                        <Label Text="{Binding Name}" VerticalOptions="Center" Margin="20,0,0,0" FontSize="18" FontAttributes="Bold"
+                               TextColor="#22264C"></Label>
+                        <Border StrokeShape="RoundRectangle 15" StrokeThickness="0" BackgroundColor="#0C0F72" HorizontalOptions="EndAndExpand" Padding="15">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding LessonNumber}" FontSize="26" HorizontalOptions="Center" FontAttributes="Bold"></Label>
+                                <Label Text="Lessons" FontSize="14"></Label>
+                            </VerticalStackLayout>
+                        </Border>
+                    </StackLayout>
+                </Border>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView >
+        <VerticalStackLayout Margin="20" Spacing="20">
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="menui.svg" WidthRequest="30" HeightRequest="30"></ImageButton>
+                <Border StrokeShape="RoundRectangle 20" HorizontalOptions="EndAndExpand">
+                    <ImageButton Source="profile.jpeg" WidthRequest="30" HeightRequest="30"></ImageButton>
+                </Border>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin=" 0,50,0,0">
+                <Label Text="Popular Courses" TextColor="#22264C" FontSize="30" FontAttributes="Bold" LineBreakMode="WordWrap"></Label>
+                <ImageButton Source="frame.svg" WidthRequest="28" HeightRequest="30" HorizontalOptions="EndAndExpand"></ImageButton>
+            </StackLayout>
+            <Border StrokeShape="RoundRectangle 15" BackgroundColor="#0C0F72" Margin="0,50,0,0">
+                <StackLayout Orientation="Horizontal" Padding="10">
+                    <Border StrokeShape="RoundRectangle 20" StrokeThickness="0">
+                        <Image Source="scince.jpg" WidthRequest="80" HeightRequest="80"></Image>
+                    </Border>
+                    <Label Text="Scince" VerticalOptions="Center" Margin="20,0,0,0" FontSize="18" FontAttributes="Bold"></Label>
+                    <Border StrokeShape="RoundRectangle 15" StrokeThickness="0" BackgroundColor="#0C0F72" HorizontalOptions="EndAndExpand" Padding="15">
+                        <VerticalStackLayout>
+                            <Label Text="15" FontSize="26" HorizontalOptions="Center" FontAttributes="Bold"></Label>
+                            <Label Text="Lessons" FontSize="14"></Label>
+                        </VerticalStackLayout>
+                    </Border>
+                </StackLayout>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                </Border.GestureRecognizers>
+            </Border>
+            <CollectionView x:Name="colc" ItemTemplate="{StaticResource Tempplet1 }" SelectionChanged="colc_SelectionChanged"
+                            SelectionMode="Single">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="15"></GridItemsLayout>
+                </CollectionView.ItemsLayout>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
